@@ -1,0 +1,15 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-service:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+spring:
+  datasource:
+    username: admin
+    password: admin123
+
+logging:
+  level:
+    root: INFO
