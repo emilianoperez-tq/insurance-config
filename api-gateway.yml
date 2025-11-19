@@ -27,7 +27,6 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://keycloak:5050/realms/inscurance-service-microservice
           jwk-set-uri: http://keycloak:5050/realms/inscurance-service-microservice/protocol/openid-connect/certs
 
 eureka:
