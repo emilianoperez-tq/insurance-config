@@ -13,3 +13,11 @@ spring:
 logging:
   level:
     root: INFO
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0 # 1.0 = 100% de las peticiones (para desarrollo)
+  zipkin:
+    tracing:
+      endpoint: http://zipkin:9411/api/v2/spans
