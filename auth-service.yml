@@ -1,0 +1,16 @@
+server:
+  port: 8084
+
+keycloak:
+  token-url: http://keycloak:8080/realms/tu-realm/protocol/openid-connect/token
+  client-id: tu-client-id
+  client-secret: tu-client-secret
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.value}
+    prefer-ip-address: false
+    hostname: ${HOSTNAME:policy-service}
+    non-secure-port: ${server.port}
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 30
