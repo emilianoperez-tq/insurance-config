@@ -1,5 +1,5 @@
 server:
-  port: 8084
+  port: 8086
 
 keycloak:
   token-url: http://keycloak:8080/realms/tu-realm/protocol/openid-connect/token
