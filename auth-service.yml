@@ -3,8 +3,8 @@ server:
 
 keycloak:
   token-url: http://keycloak:8080/realms/tu-realm/protocol/openid-connect/token
-  client-id: tu-client-id
-  client-secret: tu-client-secret
+  client-id: ${KEYCLOAK_CLIENT_ID}
+  client-secret: ${KEYCLOAK_CLIENT_SECRET}
 
 eureka:
   instance:
