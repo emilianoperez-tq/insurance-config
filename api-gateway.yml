@@ -10,9 +10,10 @@ spring:
           lower-case-service-id: true
       routes:
         - id: auth-service
-          uri: lb://AUTH-SERVICE
+          uri: lb://auth-service
           predicates:
             - Path=/api/auth/**
+
         - id: member-service
           uri: lb://member-service
           predicates:
@@ -27,11 +28,56 @@ spring:
           uri: lb://claim-service
           predicates:
             - Path=/api/claims/**
+
+        # Rutas para documentación OpenAPI de cada servicio
+        - id: member-service-docs
+          uri: lb://MEMBER-SERVICE
+          predicates:
+            - Path=/api/members/v3/api-docs
+          filters:
+            - RewritePath=/api/members/v3/api-docs, /v3/api-docs
+
+        - id: policy-service-docs
+          uri: lb://POLICY-SERVICE
+          predicates:
+            - Path=/api/policies/v3/api-docs
+          filters:
+            - RewritePath=/api/policies/v3/api-docs, /v3/api-docs
+
+        - id: claim-service-docs
+          uri: lb://CLAIM-SERVICE
+          predicates:
+            - Path=/api/claims/v3/api-docs
+          filters:
+            - RewritePath=/api/claims/v3/api-docs, /v3/api-docs
+
+        - id: auth-service-docs
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/api/auth/v3/api-docs
+          filters:
+            - RewritePath=/api/auth/v3/api-docs, /v3/api-docs
   security:
     oauth2:
       resourceserver:
         jwt:
           jwk-set-uri: http://keycloak:8080/realms/insurance-service/protocol/openid-connect/certs
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    urls:
+      - name: Member Service
+        url: /api/members/v3/api-docs
+      - name: Policy Service
+        url: /api/policies/v3/api-docs
+      - name: Claim Service
+        url: /api/claims/v3/api-docs
+      - name: Auth Service
+        url: /api/auth/v3/api-docs
+    enabled: true
+  api-docs:
+    enabled: true
 
 eureka:
   instance:
