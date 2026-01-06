@@ -17,6 +17,11 @@ spring:
     port: 5672
     username: ${RABBITMQ_USERNAME}
     password: ${RABBITMQ_PASSWORD}
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+      enabled: true
 
 cloudinary:
   cloud_name: ${CLOUDINARY_CLOUD_NAME}
@@ -43,3 +48,5 @@ springdoc:
 document:
   service:
     url: http://localhost:8085/api/documents
+    timeout: 30000 # 30 segundos
+    max-in-memory-size: 16777216 # 16MB
