@@ -39,3 +39,7 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
     enabled: true
+
+document:
+  service:
+    url: http://localhost:8085/api/documents

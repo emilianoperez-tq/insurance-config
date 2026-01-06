@@ -31,28 +31,28 @@ spring:
 
         # Rutas para documentación OpenAPI de cada servicio
         - id: member-service-docs
-          uri: lb://MEMBER-SERVICE
+          uri: lb://member-service
           predicates:
             - Path=/api/members/v3/api-docs
           filters:
             - RewritePath=/api/members/v3/api-docs, /v3/api-docs
 
         - id: policy-service-docs
-          uri: lb://POLICY-SERVICE
+          uri: lb://policy-service
           predicates:
             - Path=/api/policies/v3/api-docs
           filters:
             - RewritePath=/api/policies/v3/api-docs, /v3/api-docs
 
         - id: claim-service-docs
-          uri: lb://CLAIM-SERVICE
+          uri: lb://claim-service
           predicates:
             - Path=/api/claims/v3/api-docs
           filters:
             - RewritePath=/api/claims/v3/api-docs, /v3/api-docs
 
         - id: auth-service-docs
-          uri: lb://AUTH-SERVICE
+          uri: lb://auth-service
           predicates:
             - Path=/api/auth/v3/api-docs
           filters:
