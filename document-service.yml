@@ -22,20 +22,15 @@ eureka:
     lease-renewal-interval-in-seconds: 10
     lease-expiration-duration-in-seconds: 30
 
-cloud:
-  aws:
-    region:
-      static: ${AWS_REGION:us-east-1}
-    credentials:
-      access-key: ${AWS_ACCESS_KEY_ID:test}
-      secret-key: ${AWS_SECRET_ACCESS_KEY:test}
-    s3:
-      endpoint: ${AWS_S3_ENDPOINT:http://localhost:4566}
-      bucket: ${AWS_S3_BUCKET_NAME:insurance-documents}
-    stack:
-      auto: false
-
-# Forzar path-style access para LocalStack
 aws:
+  region:
+    static: ${AWS_REGION:us-east-1}
+  credentials:
+    access-key: ${AWS_ACCESS_KEY_ID:test}
+    secret-key: ${AWS_SECRET_ACCESS_KEY:test}
   s3:
-    path-style-access-enabled: true
+    endpoint: ${AWS_S3_ENDPOINT:http://localhost:4566}
+    bucket: ${AWS_S3_BUCKET_NAME:insurance-documents}
+  path-style-access-enabled: true
+  stack:
+    auto: false
