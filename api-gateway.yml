@@ -29,6 +29,11 @@ spring:
           predicates:
             - Path=/api/claims/**
 
+        - id: document-service
+          uri: lb://document-service
+          predicates:
+            - Path=/api/documents/**
+
         # Rutas para documentación OpenAPI de cada servicio
         - id: member-service-docs
           uri: lb://member-service
@@ -57,6 +62,7 @@ spring:
             - Path=/api/auth/v3/api-docs
           filters:
             - RewritePath=/api/auth/v3/api-docs, /v3/api-docs
+
   security:
     oauth2:
       resourceserver:
