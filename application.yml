@@ -21,3 +21,17 @@ management:
   zipkin:
     tracing:
       endpoint: http://zipkin:9411/api/v2/spans
+
+# Configuración personalizada para Secrets Manager
+aws:
+  secretsmanager:
+    endpoint: http://localhost:4566
+    region: us-east-1
+    enabled: true
+
+# Secrets que se cargarán
+secrets:
+  database: prod/security/database
+  jwt: prod/security/jwt
+  external-apis: prod/external/api-keys
+  cache: prod/cache/redis
