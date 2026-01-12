@@ -1,11 +1,6 @@
 server:
   port: 8086
 
-keycloak:
-  server-url: ${KEYCLOAK_SERVER_URL}
-  client-id: ${KEYCLOAK_CLIENT_ID}
-  client-secret: ${KEYCLOAK_CLIENT_SECRET}
-
 eureka:
   instance:
     instance-id: ${spring.application.name}:${random.value}
@@ -22,3 +17,12 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
     enabled: true
+
+aws:
+  secrets:
+    keycloak: prod/keycloak/auth
+
+keycloak:
+  server-url: ${keycloak.server-url}
+  client-id: ${keycloak.client-id}
+  client-secret: ${keycloak.client-secret}
