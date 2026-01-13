@@ -23,6 +23,6 @@ aws:
     keycloak: prod/keycloak/auth
 
 keycloak:
-  server-url: ${keycloak.server-url}
-  client-id: ${keycloak.client-id}
-  client-secret: ${keycloak.client-secret}
+  server-url: ${aws.secrets.keycloak.server-url}
+  client-id: ${aws.secrets.keycloak.client-id}
+  client-secret: ${aws.secrets.keycloak.client-secret}
