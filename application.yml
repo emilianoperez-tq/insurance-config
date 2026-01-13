@@ -10,18 +10,6 @@ spring:
     username: admin
     password: admin123
 
-  # Spring Cloud AWS Configuration
-  cloud:
-    aws:
-      region:
-        static: us-east-1
-      credentials:
-        access-key: test
-        secret-key: test
-      secretsmanager:
-        enabled: true
-        endpoint: http://localhost:4566 # LocalStack endpoint
-
 logging:
   level:
     root: INFO
