@@ -18,11 +18,11 @@ springdoc:
     path: /swagger-ui.html
     enabled: true
 
-aws:
-  secrets:
-    keycloak: prod/keycloak/auth
+spring:
+  config:
+    import: aws-secretsmanager:prod/keycloak/auth
 
 keycloak:
-  server-url: ${aws.secrets.keycloak.server-url}
-  client-id: ${aws.secrets.keycloak.client-id}
-  client-secret: ${aws.secrets.keycloak.client-secret}
+  server-url: ${server-url}
+  client-id: ${client-id}
+  client-secret: ${client-secret}
