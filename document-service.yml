@@ -34,3 +34,15 @@ aws:
   path-style-access-enabled: true
   stack:
     auto: false
+
+insurance:
+  ai:
+    provider: gemini
+    api-key: ${GEMINI_API_KEY} # Variable de entorno
+    model: gemini-1.5-flash # Opciones: gemini-1.5-flash, gemini-1.5-pro, gemini-pro-vision
+    timeout-seconds: 30
+    temperature: 0.1
+    max-tokens: 2048
+    auto-classify: true
+    retries: 3
+    use-vision: true # Habilita modo multimodal
