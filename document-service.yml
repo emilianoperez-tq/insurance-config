@@ -23,6 +23,28 @@ spring:
       temperature: 0.2
       max-tokens: 2048
       retries: 3
+    model:
+      chat:
+        # Habilita el cliente de Vertex AI (activado por defecto) [1, 2]
+        enabled: vertexai
+    vertex:
+      ai:
+        gemini:
+          # ID del proyecto en Google Cloud y región (ej. us-central1) [2, 3]
+          project-id: "TU_ID_DE_PROYECTO"
+          location: "TU_REGION"
+          # Opcional: Especificar transporte GRPC o REST (por defecto es GRPC) [2, 4]
+          transport: GRPC
+          chat:
+            options:
+              # Modelos disponibles: gemini-2.0-flash, gemini-2.0-flash-lite, etc. [3, 4]
+              model: gemini-2.0-flash
+              # Controla la aleatoriedad (0.0 a 1.0) [5, 6]
+              temperature: 0.7
+              # Máximo de tokens a generar [7]
+              max-output-tokens: 800
+              # Configuración de respuesta: text/plain o application/json [5]
+              response-mime-type: "text/plain"
 
 eureka:
   instance:
