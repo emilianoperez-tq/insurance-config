@@ -31,8 +31,7 @@ spring:
       ai:
         gemini:
           # ID del proyecto en Google Cloud y región (ej. us-central1) [2, 3]
-          project-id: "TU_ID_DE_PROYECTO"
-          location: "TU_REGION"
+          project-id: "gen-lang-client-0104227904"
           # Opcional: Especificar transporte GRPC o REST (por defecto es GRPC) [2, 4]
           transport: GRPC
           chat:
@@ -42,7 +41,7 @@ spring:
               # Controla la aleatoriedad (0.0 a 1.0) [5, 6]
               temperature: 0.7
               # Máximo de tokens a generar [7]
-              max-output-tokens: 800
+              max-output-tokens: 2048
               # Configuración de respuesta: text/plain o application/json [5]
               response-mime-type: "text/plain"
 
