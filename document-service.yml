@@ -30,6 +30,7 @@ spring:
     vertex:
       ai:
         gemini:
+          api-key: ${GEMINI_API_KEY} # Variable de entorno
           # ID del proyecto en Google Cloud y región (ej. us-central1) [2, 3]
           project-id: "gen-lang-client-0104227904"
           # Opcional: Especificar transporte GRPC o REST (por defecto es GRPC) [2, 4]
@@ -66,15 +67,3 @@ aws:
   path-style-access-enabled: true
   stack:
     auto: false
-
-insurance:
-  ai:
-    provider: gemini
-    api-key: ${GEMINI_API_KEY} # Variable de entorno
-    model: gemini-1.5-flash # Opciones: gemini-1.5-flash, gemini-1.5-pro, gemini-pro-vision
-    timeout-seconds: 30
-    temperature: 0.1
-    max-tokens: 2048
-    auto-classify: true
-    retries: 3
-    use-vision: true # Habilita modo multimodal
