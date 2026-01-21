@@ -19,7 +19,7 @@ spring:
     openai:
       api-key: ${OPENAI_API_KEY} # Variable de entorno
       timeout-seconds: 30
-      model: gpt-4-turbo
+      model: gpt-4.1-mini
       temperature: 0.2
       max-tokens: 2048
       retries: 3
