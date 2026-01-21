@@ -67,3 +67,7 @@ aws:
   path-style-access-enabled: true
   stack:
     auto: false
+
+gemini:
+  ia:
+    api-key: ${GEMINI_API_KEY}
